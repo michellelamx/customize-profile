@@ -1,5 +1,5 @@
 import { users, userItem } from './data/users.ts'
-import './styles/global.css'
+import './styles/main.css'
 
 
 export const App = () => {
