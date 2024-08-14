@@ -1,0 +1,35 @@
+.user-profile {
+  height: 100vh;
+
+  .edit-profile-link {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .user-profile-details {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .user-links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .user-socials {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
