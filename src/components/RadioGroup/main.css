@@ -1,0 +1,30 @@
+.radio-group-item {
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 9999px;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+
+  + label {
+    margin-inline-start: 8px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .indicator {
+    align-items: center;
+    display: flex;
+    height: 14px;
+    justify-content: center;
+    width: 14px;
+
+    svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}

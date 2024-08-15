@@ -1,20 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
-@layer base {
+@font-face {
+  font-display: swap;
+  font-family: Link Sans;
+  font-weight: 200 900;
+  src: url(https://edge.website.production.linktr.ee/static/LinkSans-LinkSansVF-5ba82435cfe1454f76404182afdbf4fc.woff2)
+    format('woff2-variations');
+}
 
-  * {
-    @apply tw-border-border;
-  }
+body {
+  font-family: 'Link Sans', 'Arial';
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
 
-  body {
-    @apply tw-bg-background tw-text-foreground;
-  }
+* {
+  box-sizing: border-box;
+}
+
+section {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 820;
+  margin: 0;
+}
+
+.gap-16 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

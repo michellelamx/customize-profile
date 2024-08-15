@@ -1,39 +1,26 @@
-import { Button as ShadButton } from './button'
+import { Slot } from '@radix-ui/react-slot'
+import { type VariantProps } from 'class-variance-authority'
+import { buttonVariants } from './variants'
+import { CSSProperties, forwardRef } from 'react'
 import './main.css'
-import { CSSProperties, forwardRef, ReactNode } from 'react'
 
-interface ShadButtonProps {
-  onClick?: () => void
-  variant?: 'rounded' | 'squared'
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
   customStyle?: CSSProperties
-  children: ReactNode
-  className?: string,
-  disabled?: boolean
 }
 
-export const Button = forwardRef<HTMLButtonElement, ShadButtonProps>(
-  (
-    {
-      children,
-      variant = 'rounded',
-      className,
-      customStyle,
-      onClick,
-      ...props
-    },
-    ref,
-  ) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, asChild = false, customStyle, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+    const classes = `${buttonVariants({ variant })} ${className || ''}`.trim()
+
     return (
-      <ShadButton
-        className={className}
-        ref={ref}
-        variant={variant}
-        style={customStyle}
-        onClick={onClick}
-        {...props}
-      >
-        {children}
-      </ShadButton>
+      <Comp className={classes} ref={ref} {...props} style={customStyle}>
+        {props.children}
+      </Comp>
     )
   },
 )
